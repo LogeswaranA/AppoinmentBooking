@@ -8,6 +8,7 @@
 - Clone the repositories
 - CD projectname
 - npm install
+- migrate contract & copy contract address and replace in src/js/app.js file
 - npm run dev
 
 Note: Make sure, you have Metamask installed and "Ganache" is running locally.
