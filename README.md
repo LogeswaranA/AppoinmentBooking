@@ -10,4 +10,4 @@ iv) deploy the contract in local blockchain(ganache)
 v) copy contract address & goto -> src/js/app.js, replace it on line number 59.
 vi) npm run dev ( you should be able to see the project up & running)
 
-
+If any issues, connect with me.
