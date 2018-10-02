@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> Dashboard</title>
+        <meta name="description" content="Dashboard UI Kit">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600" rel="stylesheet">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <style>
+                .booklist {
+                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                  max-width: 300px;
+                  margin: auto;
+                  text-align: center;
+                  float:left;
+                  margin-left:20px;
+                  font-family: arial;
+                  
+                }
+                
+                .price {
+                  color: grey;
+                  font-size: 22px;
+                }
+                
+                .booklist button {
+                  border: none;
+                  outline: 0;
+                  padding: 12px;
+                  margin-top:5px;
+                  margin-left:1px;
+                  color: white;
+                  background-color: #000;
+                  text-align: center;
+                  cursor: pointer;
+                  width: 40%;
+                  font-size: 18px;
+                }
+                
+                .booklist button:hover {
+                  opacity: 0.7;
+                }
+        </style>
+        <!-- Stylesheet -->
+        
+        <link rel="stylesheet" href="css/main.min.css">
+
+        
+
+    </head>
+    <body class="o-page">
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <div class="o-page__sidebar js-page-sidebar">
+            <div class="c-sidebar">
+                <a class="c-sidebar__brand" href="#">
+                    <img class="c-sidebar__brand-img" src="img/logo.png" alt="Logo"> Dashboard
+                </a>
+                
+                <h4 class="c-sidebar__title">Dashboards</h4>
+                <ul class="c-sidebar__list">
+
+                    <li class="c-sidebar__item">
+                        <a class="c-sidebar__link" href="home.html">
+                            <i class="fa fa-home u-mr-xsmall"></i>Overview
+                        </a>
+                    </li>
+
+                    <li class="c-sidebar__item">
+                        <a class="c-sidebar__link" href="index.html">
+                            <i class="fa fa-tachometer u-mr-xsmall"></i>Logout 
+                        </a>
+                    </li>
+
+                </ul>
+               
+            </div><!-- // .c-sidebar -->
+        </div><!-- // .o-page__sidebar -->
+
+        <main class="o-page__content">
+            <header class="c-navbar u-mb-medium">
+                <button class="c-sidebar-toggle u-mr-small">
+                    <span class="c-sidebar-toggle__bar"></span>
+                    <span class="c-sidebar-toggle__bar"></span>
+                    <span class="c-sidebar-toggle__bar"></span>
+                </button><!-- // .c-sidebar-toggle -->
+
+                <h2 class="c-navbar__title u-mr-auto">Your Dashboard</h2>         
+            </header>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+
+                           <ul class="c-tabs__list nav nav-tabs" id="myTab" role="tablist">
+                                <li><a class="c-tabs__link active" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="true">Create Slot</a></li>
+
+                                <li><a class="c-tabs__link " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false">Your Slot List</a></li>
+
+                                <li><a class="c-tabs__link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Booking Request Awaiting Your Action</a></li>
+
+                                <li><a class="c-tabs__link u-hidden-down@tablet" id="nav-customer-tab" data-toggle="tab" href="#nav-customer" role="tab" aria-controls="nav-customer" aria-selected="false">Booked Slot</a></li>
+
+                                <li><a class="c-tabs__link u-hidden-down@tablet" id="nav-customer-tab" data-toggle="tab" href="#nav-denied" role="tab" aria-controls="nav-denied" aria-selected="false">Denied Slots</a></li>
+
+                            </ul>
+
+                            <div class="c-tabs__content tab-content u-mb-large" id="nav-tabContent">
+                                <div class="c-tabs__pane  u-pb-medium" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <div id="slotsView" class="row">
+                                    <!--Load here-->
+                                </div>
+                                <div id="slotsTemplate"  style="display:none">
+                                   <div  class="booklist" >
+
+                                    <h1><span class="slot-slotid"></span></h1>
+                                    <p>From Date : <span class="slot-fromDate" id="fdate"></span></p>
+                                    <p>To Date   : <span class="slot-toDate"></span></p>
+                                    <p>Time Availability     : <span class="slot-fromTime"></span></p>
+                                    <p>Slots Remaining    : <h3><span class="slot-availability"></span></h3></p>
+                                    <button type="button" class="btn btn-primary btn-view" id="btnview" slot-id="">View Slots</button>
+
+                                   </div>
+                                </div>
+                                </div>
+                                <div class="c-tabs__pane u-pb-medium" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <div id="requestView" class="row">
+                                                <!--Load here-->
+                                    </div>
+                                    <div id="requestTemplate"  style="display:none">
+                                        <div  class="booklist" >
+                                            <p style="padding:10px;"><span id='rday' class="req-day"></span></p>
+                                            <p>From Time   : <span id='ftime' class="req-fromtime"></span></p>
+                                            <p>To Time   : <span id='ttime' class="req-totime"></span></p>
+                                            <p>Status : <span id='stat' class="req-status"></span></p>
+                                            <p><button type="button" id="acceptbtn" style="background-color: grey !important; border-color: gray !important" class="c-btn c-btn--info c-btn--fullwidth">Accept</button>
+                                            <button type="button" id="denybtn" style="background-color: grey !important; border-color: gray !important" class="c-btn c-btn--info c-btn--fullwidth">Deny</button></p>
+                                        </div>
+                                    </div>
+ 
+                                </div>
+                                <div class="c-tabs__pane active u-pb-medium" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <div class="o-page__card">
+                                        <div class="c-card u-mb-xsmall">
+                                                <header class="c-card__header u-pt-large">
+                                                    
+                                                    <h1 class="u-h3 u-text-center u-mb-zero">Create Open Slot</h1>
+                                                </header>
+                                                
+                                                <form class="c-card__body">
+                                                    <div class="c-field u-mb-small">
+                                                        <label class="c-field__label" for="input1">From Date</label> 
+                                                        <input class="c-input" type="date" id="input1"> 
+                                                    </div>
+                                
+                                                    <div class="c-field u-mb-small">
+                                                        <label class="c-field__label" for="input2">To Date</label> 
+                                                        <input class="c-input" type="date" id="input2" > 
+                                                    </div>
+                                                   <button type="button" style="background-color: grey !important; border-color: gray !important" class="c-btn c-btn--info c-btn--fullwidth" data-flag="upflag" onclick="App.openSlots(); return false;">Open Slot</button>
+                                                    
+                                                </form>
+                                            </div>
+                                            </div>
+                                    
+                                </div>
+
+                                <div class="c-tabs__pane u-pb-medium" id="nav-customer" role="tabpanel" aria-labelledby="nav-customer-tab">
+                                    <div id="acceptView" class="row">
+                                                <!--Load here-->
+                                    </div>
+                                    <div id="acceptTemplate"  style="display:none;">
+                                        <div  class="booklist" style="padding:20px;" >
+                                                <h5 style="padding:0px 10px 0px 10px;line-height:2px;">Day</h5>
+                                            <h5 style="padding:10px;"><span id='rday' class="req-day"></span></h5>
+                                            <p>From Time   : <span id='ftime' class="req-fromtime"></span></p>
+                                            <p>To Time   : <span id='ttime' class="req-totime"></span></p>
+                                            <p>Status : <span id='stat' class="req-status"></span></p>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="c-tabs__pane u-pb-medium" id="nav-denied" role="tabpanel" aria-labelledby="nav-customer-tab">
+                                        <div id="deniedView" class="row">
+                                                    <!--Load here-->
+                                        </div>
+                                        <div id="deniedTemplate"  style="display:none">
+                                            <div  class="booklist" style="padding:20px;" >
+                                                 <h5 style="padding:0px 10px 0px 10px;line-height:2px;">Day</h5>
+                                                <h5 style="padding:10px;"><span id='rday' class="req-day"></span></h5>
+                                                <p>From Time   : <span id='ftime' class="req-fromtime"></span></p>
+                                                <p>To Time   : <span id='ttime' class="req-totime"></span></p>
+                                                <p>Status : <span id='stat' class="req-status"></span></p>
+                                            </div>
+                                        </div>                                    
+                                </div>
+                            </div>
+
+                    </div>
+
+                    
+
+                </div>
+
+            </div><!-- // .container-fluid -->
+            
+        </main><!-- // .o-page__content -->
+        <script src="js/main.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        
+        <script src="js/web3.min.js"></script>
+        <script src="js/truffle-contract.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#btnview").click(function(){
+                    var fd = $("#fdate").val();
+                    console.log("hii test",fd);
+                });
+            });
+
+            $(document).on('click', '#denybtn', function() { 
+                console.log("thisvalue",this.value);
+                var frd = $('#rday').text();
+                var frt = $('#ftime').text();
+                var tot = $('#ttime').text();
+                var apr = 'deny';
+                App.acceptDeny(frd,frt,tot,apr);
+            });
+
+            $(document).on('click', '#acceptbtn', function() { 
+                var frd = $('#rday').text();
+                var frt = $('#ftime').text();
+                var tot = $('#ttime').text();
+                var apr = 'accept';
+                App.acceptDeny(frd,frt,tot,apr);
+            });
+
+        </script>
+
+    </body>
+</html>
+

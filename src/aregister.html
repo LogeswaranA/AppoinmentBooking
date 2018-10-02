@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Register | Dashboard UI Kit</title>
+        <meta name="description" content="Dashboard UI Kit">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600" rel="stylesheet">
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="css/main.min.css">
+    </head>
+    <div class="o-page o-page--center">
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <div class="o-page__card">
+            <div class="c-card u-mb-xsmall">
+                <header class="c-card__header u-pt-large">
+                    <a class="c-card__icon" href="#!">
+                        <img src="img/logo-login.svg" alt="Dashboard UI Kit">
+                    </a>
+                    <h1 class="u-h3 u-text-center u-mb-zero">Sign up to Get Started</h1>
+                </header>
+                
+                <form class="c-card__body">
+                    <div class="c-field u-mb-small">
+                        <label class="c-field__label" for="input1">Username</label> 
+                        <input class="c-input" type="email" id="input1" placeholder="Username"> 
+                    </div>
+
+                    <div class="c-field u-mb-small">
+                        <label class="c-field__label" for="input2">Password</label> 
+                        <input class="c-input" type="password" id="input2" placeholder="password"> 
+                    </div>
+
+                    <button type="button"  class="c-btn" data-flag="upflag" onclick="App.adminregister(); return false;">Register</button>
+
+                </form>
+            </div>
+
+            <div class="o-line">
+                <a class="u-text-mute u-text-small" href="alogin.html" title="Login">
+                    <i class="fa fa-long-arrow-left u-mr-xsmall"></i> Already have an account, login instead
+                </a>
+            </div>
+        
+        </div>
+</div>
+
+       
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+    </body>
+</html>
